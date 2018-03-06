@@ -4,7 +4,7 @@ export const schema = {
     "users": {
       "type": "array",
       "minItems": 3,
-      "maxItems": 5,
+      "maxItems": 10,
       "items": {
         "type": "object",
         "properties": {
@@ -32,3 +32,6 @@ export const schema = {
   },
   "required": ["users"]
 };
+
+
+/*the faker key is where you use faker.js */
