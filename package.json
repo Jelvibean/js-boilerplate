@@ -4,19 +4,23 @@
   "description": "BoilerPlate to start JS projects",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel open:src security-check share-localtunnel lint:watch test:watch",
+    "start": "npm-run-all --parallel start-mockapi open:src security-check share-localtunnel lint:watch test:watch",
     "open:src": "babel-node buildScripts/srcServer.js",
     "security-check": "nsp check",
     "share-localtunnel": "lt --port 3000 --subdomain yelvibean",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "generate-mock-data": "babel-node buildScripts/generateMockData.js",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001"
 
   },
   "author": "Yelvy Buitrago",
   "license": "ISC",
   "dependencies": {
+    "promise-polyfill": "^7.1.0",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
