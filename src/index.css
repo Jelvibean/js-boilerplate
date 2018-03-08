@@ -1,0 +1,17 @@
+body {
+    font-family: sans-serif;
+}
+
+table th {
+    padding: 15px;
+}
+
+#peopleTbl th {
+    background-color: #853AEC;
+    color: #fff;
+}
+
+.highlight {
+    color:  #853aec;
+    font-weight: bold;
+}

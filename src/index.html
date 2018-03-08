@@ -6,17 +6,26 @@
   </head>
   <body>
     <h1>Users</h1>
-  <table border="1" cellpadding="3" cellspacing="2">
+  <table border="1" cellpadding="3" cellspacing="2" id="peopleTbl">
     <thead>
-      <th>&nbsp;</th>
       <th>Id</th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Email</th>
+      <th>Remove Student</th>
     </thead>
     <tbody id="users">
 
     </tbody>
   </table>
+
+  <div>
+      <h1>Notes</h1>
+      <strong>Remember:</strong>  <span class="highlight">http://localhost:3000/?useMockApi=true</span> will not work in the production build version because we didnt set up the start-mockapi in the build npm scripts.  Only when you run the start will this be an option.
+    </br>
+      <strong>Remember:</strong>  Your delete will not work in production build because you never set that up in that version.  This may be a to do later.  It should work nicely in the npm start development server build.
+    </div>
+
+
   </body>
 </html>

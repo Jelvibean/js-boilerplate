@@ -1,3 +1,5 @@
+/* This file is where we are centralize all our api calls. */
+
 import 'whatwg-fetch';
 import Promise from 'promise-polyfill';
 import getBaseUrl from './baseUrl';
@@ -9,15 +11,17 @@ if (!window.Promise) {
   window.Promise = Promise;
 }
 
-export function getUsers() {
-  return get('users');
-}
-
 export function deleteUser(id) {
   return del(`users/${id}`);
 }
 
+export function getUsers() {
+/* users is a term given in the url -  http://localhost:3000/*****users****** */
+  return get('users');
+}
+
 function get(url) {
+/* baseUrl ends up being or / or http://localhost:3001 */
   return fetch(baseUrl + url).then(onSuccess, onError);
 }
 
